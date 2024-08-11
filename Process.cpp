@@ -24,3 +24,17 @@ string Process::returnID() {
 int Process::returnBound() {
     return bound;
 }
+
+void Process::addBurst(int burst_time) {
+    bursts.push_back(burst_time);
+}
+
+void Process::numBursts() {
+    return bursts.size();
+}
+
+int Process::burst() {
+    int bursty = bursts[0];
+    bursts.erase(bursts.begin());
+    return bursty;
+}

@@ -17,9 +17,13 @@ class Process {
     public:
         int bound;
         string ID;
+        vector<int> bursts;
         Process(string ID_, int bound_);
         int returnBound(); //return 0 if CPU bound and 1 if IO Bound
         string returnID(); //returns process ID
+        void addBurst(int burst_time);
+        void numBursts();
+        int burst();
 };
 
 

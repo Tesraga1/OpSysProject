@@ -14,21 +14,22 @@ using namespace std;
 
 
 class Process {
-    public:
-        int bound;
-        string ID;
-        int arrival;
-        int IO_Block;
-        vector<int> bursts;
-        Process(string ID_, int bound_);
-        int returnBound(); //return 0 if CPU bound and 1 if IO Bound
-        string returnID(); //returns process ID
-        void addBurst(int CPU_time, int IO_time);
-        int numBursts();
-        int returnBurst();
-        void burstComplete(int currentTime);
-        int returnBlockTime();
-        int returnArrivalTime();
+public:
+    int bound;
+    string ID;
+    int arrival;
+    int IO_Block;
+    vector<int> bursts;
+    Process(string ID_, int bound_);
+    int returnBound(); //return 0 if CPU bound and 1 if IO Bound
+    string returnID(); //returns process ID
+    void addBurst(int CPU_time, int IO_time);
+    int numBursts();
+    int returnBurst();
+    void burstComplete(int currentTime);
+    int returnBlockTime();
+    int returnArrivalTime();
+    void add_arrival(int a);
 };
 
 

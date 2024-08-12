@@ -26,7 +26,7 @@ int Process::returnBound() {
 }
 
 void Process::addBurst(int CPU_time, int IO_time) {
-    bursts.push_back(burst_time);
+    bursts.push_back(CPU_time);
     bursts.push_back(IO_time);
 }
 
@@ -35,7 +35,7 @@ int Process::numBursts() {
 }
 
 int Process::returnBurst() {
-    return burst[0];
+    return bursts[0];
 }
 
 void Process::burstComplete(int currentTime) {
@@ -49,4 +49,7 @@ int Process::returnBlockTime() {
 }
 int Process::returnArrivalTime() {
     return arrival;
+}
+void Process::add_arrival(int a) {
+    arrival = a;
 }

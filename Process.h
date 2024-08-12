@@ -22,7 +22,7 @@ class Process {
         int returnBound(); //return 0 if CPU bound and 1 if IO Bound
         string returnID(); //returns process ID
         void addBurst(int burst_time);
-        void numBursts();
+        int numBursts();
         int burst();
 };
 

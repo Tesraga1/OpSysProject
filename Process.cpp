@@ -29,7 +29,7 @@ void Process::addBurst(int burst_time) {
     bursts.push_back(burst_time);
 }
 
-void Process::numBursts() {
+int Process::numBursts() {
     return bursts.size();
 }
 

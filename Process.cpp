@@ -25,16 +25,28 @@ int Process::returnBound() {
     return bound;
 }
 
-void Process::addBurst(int burst_time) {
+void Process::addBurst(int CPU_time, int IO_time) {
     bursts.push_back(burst_time);
+    bursts.push_back(IO_time);
 }
 
 int Process::numBursts() {
-    return bursts.size();
+    return bursts.size()/2;
 }
 
-int Process::burst() {
-    int bursty = bursts[0];
+int Process::returnBurst() {
+    return burst[0];
+}
+
+void Process::burstComplete(int currentTime) {
     bursts.erase(bursts.begin());
-    return bursty;
+    IO_Block = currentTime + bursts[0];
+    bursts.erase(bursts.begin());
+}
+
+int Process::returnBlockTime() {
+    return IO_Block;
+}
+int Process::returnArrivalTime() {
+    return arrival;
 }

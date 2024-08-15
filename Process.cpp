@@ -17,7 +17,7 @@ Process::Process(string ID_, int bound_) {
     bound = bound_;
 }
 
-string Process::returnID() {
+string Process::returnID() const{
     return ID;
 }
 
@@ -30,11 +30,11 @@ void Process::addBurst(int CPU_time, int IO_time) {
     bursts.push_back(IO_time);
 }
 
-int Process::numBursts() {
+int Process::numBursts() const{
     return bursts.size()/2;
 }
 
-int Process::returnBurst() {
+int Process::returnBurst() const{
     return bursts[0];
 }
 
@@ -44,17 +44,17 @@ void Process::burstComplete(int currentTime) {
     bursts.erase(bursts.begin());
 }
 
-int Process::returnBlockTime() {
+int Process::returnBlockTime() const{
     return IO_Block;
 }
-int Process::returnArrivalTime() {
+int Process::returnArrivalTime() const{
     return arrival;
 }
 void Process::add_arrival(int a) {
     arrival = a;
 }
 
-int Process::returnEnd() {
+int Process::returnEnd() const{
     return end_time;
 }
 

@@ -23,16 +23,20 @@ public:
     vector<int> bursts;
     Process(string ID_, int bound_);
     int returnBound(); //return 0 if CPU bound and 1 if IO Bound
-    string returnID(); //returns process ID
+    string returnID() const; //returns process ID
     void addBurst(int CPU_time, int IO_time);
-    int numBursts();
-    int returnBurst();
+    int numBursts() const;
+    int returnBurst() const;
     void burstComplete(int currentTime);
-    int returnBlockTime();
-    int returnArrivalTime();
+    int returnBlockTime() const;
+    int returnArrivalTime() const;
     void add_arrival(int a);
     void add_end(int a);
-    int returnEnd();
+    int returnEnd() const;
+    bool operator<(const Process& other) const{
+        // Customize this comparison according to your needs
+        return returnEnd() < other.returnEnd();  // Example: compare based on burst time
+    }
 };
 
 

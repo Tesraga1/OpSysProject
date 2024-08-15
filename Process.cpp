@@ -44,6 +44,16 @@ void Process::burstComplete(int currentTime) {
     bursts.erase(bursts.begin());
 }
 
+void Process::reduceBurst(int currentTime) {
+    if (!bursts.empty()) {
+        // reduce the first element of the bursts vector (current CPU time)
+        bursts[0] -= currentTime;
+        if (bursts[0] < 0) {
+            bursts[0] = 0;
+        }
+    }
+};
+
 int Process::returnBlockTime() const{
     return IO_Block;
 }

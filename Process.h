@@ -19,6 +19,7 @@ public:
     string ID;
     int arrival;
     int IO_Block;
+    int end_time;
     vector<int> bursts;
     Process(string ID_, int bound_);
     int returnBound(); //return 0 if CPU bound and 1 if IO Bound
@@ -30,6 +31,8 @@ public:
     int returnBlockTime();
     int returnArrivalTime();
     void add_arrival(int a);
+    void add_end(int a);
+    int returnEnd();
 };
 
 

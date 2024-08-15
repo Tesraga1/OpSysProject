@@ -53,3 +53,11 @@ int Process::returnArrivalTime() {
 void Process::add_arrival(int a) {
     arrival = a;
 }
+
+int Process::returnEnd() {
+    return end_time;
+}
+
+void Process::add_end(int a) {
+    end_time = a;
+}

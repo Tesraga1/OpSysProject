@@ -28,6 +28,7 @@ public:
     int numBursts() const;
     int returnBurst() const;
     void burstComplete(int currentTime);
+    void reduceBurst(int currentTime);
     int returnBlockTime() const;
     int returnArrivalTime() const;
     void add_arrival(int a);

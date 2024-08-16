@@ -38,9 +38,9 @@ int Process::returnBurst() const{
     return bursts[0];
 }
 
-void Process::burstComplete(int currentTime) {
+void Process::burstComplete(int currentTime, int time) {
     bursts.erase(bursts.begin());
-    IO_Block = currentTime + bursts[0];
+    IO_Block = currentTime + bursts[0] + time;
     bursts.erase(bursts.begin());
 }
 

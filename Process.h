@@ -27,7 +27,7 @@ public:
     void addBurst(int CPU_time, int IO_time);
     int numBursts() const;
     int returnBurst() const;
-    void burstComplete(int currentTime);
+    void burstComplete(int currentTime, int tim);
     void reduceBurst(int currentTime);
     int returnBlockTime() const;
     int returnArrivalTime() const;

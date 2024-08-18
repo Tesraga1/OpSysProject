@@ -17,27 +17,34 @@ class Process {
 public:
     int bound;
     string ID;
+    int prediction;
     int arrival;
     int IO_Block;
     int end_time;
+    int saved_burst;
+    bool preempt = false;
     vector<int> bursts;
-    Process(string ID_, int bound_);
+    Process(string ID_, int bound_, int prediction_);
     int returnBound(); //return 0 if CPU bound and 1 if IO Bound
     string returnID() const; //returns process ID
     void addBurst(int CPU_time, int IO_time);
+    void save_burst();
+    int return_saved_burst() const;
     int numBursts() const;
     int returnBurst() const;
-    void burstComplete(int currentTime, int tim);
-    void reduceBurst(int currentTime);
+    void burstComplete(int currentTime, int time);
+    void reduceBurst();
     int returnBlockTime() const;
     int returnArrivalTime() const;
     void add_arrival(int a);
     void add_end(int a);
     int returnEnd() const;
-    bool operator<(const Process& other) const{
-        // Customize this comparison according to your needs
-        return returnEnd() < other.returnEnd();  // Example: compare based on burst time
-    }
+    int return_prediction() const;
+    void update_prediction(float alph, int type);
+    void set_preempt();
+    void unpreempt();
+    bool return_preempt();
+
 };
 
 

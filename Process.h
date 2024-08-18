@@ -18,6 +18,7 @@ public:
     int bound;
     string ID;
     int prediction;
+    int decremented_prediction;
     int arrival;
     int IO_Block;
     int end_time;

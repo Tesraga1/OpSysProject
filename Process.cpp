@@ -34,7 +34,6 @@ void Process::save_burst() {
 
 //adds bursts to the process while initializing
 void Process::addBurst(int CPU_time, int IO_time) {
-    total_burst_time += CPU_time;
     bursts.push_back(CPU_time);
     bursts.push_back(IO_time);
 }

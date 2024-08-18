@@ -24,9 +24,13 @@ public:
     int end_time;
     int saved_burst;
     bool preempt = false;
+    int wait_time = 0;
     vector<int> bursts;
     Process(string ID_, int bound_, int prediction_);
     int returnBound(); //return 0 if CPU bound and 1 if IO Bound
+    void increment_wait_time();
+    int return_wait_time();
+    void decrement_wait_time(int decrement);
     string returnID() const; //returns process ID
     void addBurst(int CPU_time, int IO_time);
     void save_burst();

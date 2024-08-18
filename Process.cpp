@@ -22,7 +22,7 @@ string Process::returnID() const{
     return ID;
 }
 
-//returns io bound time
+//returns if io or cpu bound
 int Process::returnBound() {
     return bound;
 }
@@ -113,4 +113,16 @@ void Process::unpreempt() {
 //lets us know if the process is preempt
 bool Process::return_preempt() {
     return preempt;
+}
+
+void Process::increment_wait_time() {
+    wait_time++;
+}
+
+int Process::return_wait_time() {
+    return wait_time;
+}
+
+void Process::decrement_wait_time(int decrement) {
+    wait_time-=decrement;
 }

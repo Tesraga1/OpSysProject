@@ -25,6 +25,10 @@ public:
     int saved_burst;
     bool preempt = false;
     int wait_time = 0;
+    int total_cpu_time = 0;
+    double turnaround;
+    int switches = 0;
+
     vector<int> bursts;
     Process(string ID_, int bound_, int prediction_);
     int returnBound(); //return 0 if CPU bound and 1 if IO Bound
@@ -49,6 +53,9 @@ public:
     void set_preempt();
     void unpreempt();
     bool return_preempt();
+    void set_turnaround();
+    void increment_switch(int time);
+    double return_turnaround();
 
 };
 

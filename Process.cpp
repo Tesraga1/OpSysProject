@@ -34,6 +34,7 @@ void Process::save_burst() {
 
 //adds bursts to the process while initializing
 void Process::addBurst(int CPU_time, int IO_time) {
+    total_cpu_time += CPU_time;
     bursts.push_back(CPU_time);
     bursts.push_back(IO_time);
 }
@@ -125,4 +126,16 @@ int Process::return_wait_time() {
 
 void Process::decrement_wait_time(int decrement) {
     wait_time-=decrement;
+}
+
+void Process::set_turnaround() {
+    turnaround = wait_time + total_cpu_time;
+}
+
+double Process::return_turnaround() {
+    return turnaround;
+}
+
+void Process::increment_switch(int time) {
+    switches += time;
 }

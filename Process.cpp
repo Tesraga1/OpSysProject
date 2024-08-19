@@ -139,3 +139,13 @@ double Process::return_turnaround() {
 void Process::increment_switch(int time) {
     switches += time;
 }
+
+int Process::return_num_under_slice(int slice) {
+    int counter = 0;
+    for(long unsigned int x = 0; x < bursts.size(); x+=2) {
+        if (bursts[x] <= slice) {
+            counter++;
+        }
+    }
+    return counter;
+}

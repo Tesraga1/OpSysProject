@@ -56,7 +56,7 @@ public:
     void set_turnaround();
     void increment_switch(int time);
     double return_turnaround();
-
+    int return_num_under_slice(int slice);
 };
 
 
